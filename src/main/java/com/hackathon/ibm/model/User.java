@@ -27,4 +27,22 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
+    @Column(name = "employee_id", unique = true)
+    private String employeeId;
+
+    private String department;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "access", nullable = false)
+    private AccessLevel accessLevel = AccessLevel.LOW;
+
+    @Column(nullable = false)
+    private Integer performance = 0;
+
+    @Column(nullable = false)
+    private Integer salaryBand = 1;
+
+    @Column(name = "tenure_months", nullable = false)
+    private Integer tenureMonths = 0; // default 0 for new employee
+
 }
